@@ -1,90 +1,169 @@
+/* General Styles */
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
+  margin: 0;
   padding: 0;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 22px;
+body {
+  /*background: linear-gradient(360deg, #800000, #ffd700);*/
+  font-family: "Arial", sans-serif;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
 }
 
-h2 {
-  margin-top: 0;
-  font-size: 20px;
+/* Game Layout */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
 }
 
-h3 {
-  margin-top: 0;
+.status {
   font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-inline-start: 20px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
+/* Tic-Tac-Toe Board */
+.board-row {
+  display: flex;
+  justify-content: center;
 }
 
 .square {
   background: #fff;
-  border: 1px solid #999;
-  float: left;
+  border: 2px solid #333;
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
+  height: 80px;
+  width: 80px;
   text-align: center;
-  width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
+.square:hover {
+  background: #e3e3e3;
 }
 
-.status {
+/* Styling the icons */
+.square i {
+  font-size: 36px;
+  color: #333;
+}
+
+/* Game Info */
+.game-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.game-info ol {
+  list-style: none;
+  padding: 0;
+}
+
+.game-info li {
+  margin-bottom: 8px;
+}
+
+.game-info button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.game-info button:hover {
+  background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .square {
+    height: 60px;
+    width: 60px;
+  }
+
+  .square i {
+    font-size: 28px;
+  }
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
   margin-bottom: 10px;
 }
-.game {
-  display: flex;
-  flex-direction: row;
+
+.modal-content button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
-.game-info {
-  margin-left: 20px;
+.modal-content button:hover {
+  background: #555;
+}
+
+.undo-button {
+  background: #800000; /* Maroon */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.undo-button:hover {
+  background: #ffd700; /* Yellow */
+  color: #800000;
+}
+
+.undo-button:disabled {
+  background: gray;
+  cursor: not-allowed;
 }
